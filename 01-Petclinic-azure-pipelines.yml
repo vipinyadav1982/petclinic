@@ -21,10 +21,10 @@ jobs:
    # name:  DevEnv
    #resourceType: VirtualMachine
    # tags: web
- - job: 
- - deployment: VMDeploy
-   displayName: web
-   environment:
+jobs: 
+- deployment: VMDeploy
+  displayName: Webserver
+  environment:
     name: DevEnv
     resourceType: VirtualMachine
   strategy:
