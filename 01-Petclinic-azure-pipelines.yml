@@ -14,14 +14,7 @@ jobs:
       TargetFolder: $(Build.ArtifactStagingDirectory)
   - upload: $(Build.ArtifactStagingDirectory)
     artifact: drop
-#- job: Deployment 
-#- deployment: VMDeploy
- # displayName: Webserver
-  #environment:
-   # name:  DevEnv
-   #resourceType: VirtualMachine
-   # tags: web
-jobs: 
+- job: Deployment
 - deployment: VMDeploy
   displayName: Webserver
   environment:
