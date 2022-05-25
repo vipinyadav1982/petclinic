@@ -14,9 +14,9 @@ jobs:
       TargetFolder: $(Build.ArtifactStagingDirectory)
   - upload: $(Build.ArtifactStagingDirectory)
     artifact: drop
-- job:
+- job: Deployment
 - deployment: VMDeploy
-  displayName: web
+  displayName: Webserver
   pool:
     vmImage: 'ubuntu-latest'
   environment:
@@ -26,7 +26,4 @@ jobs:
     runOnce:
       deploy:
         steps:
-        - script: |
-                # Modify deployment script based on the app type
-                echo "Starting deployment script run"
-                sudo java -jar '$(Pipeline.Workspace)/drop/**/target/*.jar'
+        - script: echo my first deployment
